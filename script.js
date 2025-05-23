@@ -75,4 +75,47 @@ const afficherNomsMajuscules = () => {
 
     // EXO 9
 
+    let products = [
+        {nom: "Stylo", prix: 1.5},
+        {nom: "Cahier", prix: 3},
+        {nom: "Gomme", prix: 0.8},
+    ]
+
+    let tableProducts
+
+    const creerTable = () => {
+
+    tableProducts = document.createElement("table");
+    body.append(tableProducts);
+
+    let tHead = document.createElement("thead");
+    let tBody = document.createElement("tbody");
+    let thRow = document.createElement("tr");
+    let tbRow
+
+    console.log((products[0].nom));
+    console.log(Object.keys(products[0])[0]);
     
+
+    // The first row of the table shows the object keys "name" and "price"
+    let thName = document.createElement("th");
+    let thPrice = document.createElement("th");
+    thName.textContent = `${Object.keys(products[0])[0]}`;
+    thPrice.textContent = `${Object.keys(products[0])[1]}`;
+    tableProducts.append(tHead); // Pushes a <thead> element in the <table>
+    tableProducts.append(tBody); // Pushes a <tbody> element in the <table>
+    tHead.append(thRow); // Pushes a <tr> element in the <thead>
+    thRow.append(thName, thPrice); // Pushes <th> elements in the <tr> of <thead>
+
+    for (let i = 0; i < products.length; i++) {
+        tbRow = document.createElement("tr");
+        tBody.append(tbRow); // Pushes a <tr> element in the <tbody>
+        let tdNameValue = document.createElement("td");
+        let tdPriceValue = document.createElement("td");
+        tdNameValue.textContent = `${products[i].nom}`;
+        tdPriceValue.textContent = `${products[i].prix}`;
+        tbRow.append(tdNameValue); //Creates a <td> element with the value of "name" in the <tr> of the <tbody>
+        tbRow.append(tdPriceValue); //Creates a <td> element with the value of "price" in the <tr> of the <tbody>
+        }
+}
+    creerTable();
