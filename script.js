@@ -31,3 +31,26 @@ removeText.remove();
 
 // EXO 6
 
+let fruits = ["pomme", "banane", "orange"];
+let fruitsList = document.querySelector("#liste-fruits");
+
+for (let fruit of fruits) {
+    let fruitsListItem = document.createElement("li");
+    fruitsListItem.textContent = fruit;
+    fruitsList.append(fruitsListItem);
+}
+
+// EXO 7
+
+let myList = document.querySelector("#myList");
+let numbers = [3, 8, 12, 5, 2];
+let listEvenNumber;
+
+for (let number of numbers) {
+    listEvenNumber = document.createElement("li");
+    listEvenNumber.textContent = number;  
+    console.log(listEvenNumber);
+    if (number % 2 === 0) {     
+        myList.append(listEvenNumber);
+    }      
+}
