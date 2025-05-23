@@ -54,3 +54,25 @@ for (let number of numbers) {
         myList.append(listEvenNumber);
     }      
 }
+
+// EXO 8
+
+let persons = ["alice", "bob", "claire"];
+let personsList
+let body = document.querySelector("body");
+
+const afficherNomsMajuscules = () => {
+    personsList = document.createElement("ul");
+    personsList.classList.add("personsList");
+    body.append(personsList);
+    for (let person of persons) {
+        let personsListItem = document.createElement("li");
+        personsListItem.textContent = `${(person.charAt(0).toUpperCase())}${person.slice(1)}`;
+        personsList.append(personsListItem);
+    }
+}
+    afficherNomsMajuscules();
+
+    // EXO 9
+
+    
