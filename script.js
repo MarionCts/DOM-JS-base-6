@@ -140,3 +140,53 @@ const detectExpensive = () => {
 }
 
 detectExpensive();
+
+// EXO 11
+
+let ages = [5, 18, 25, 15, 30];
+
+const underAgeListTitle = document.createElement("h3");
+underAgeListTitle.textContent = "Liste des personnes en fonction de leur âge";
+body.append(underAgeListTitle);
+
+const underAgeList = document.createElement("ul");
+body.append(underAgeList);
+
+for (let user of ages) {
+ let underAgeUser = document.createElement("li");
+ if (user < 18) {
+  underAgeUser.textContent = `Mineur`;
+ } else {
+  underAgeUser.textContent = `Majeur`;
+ }
+ underAgeList.append(underAgeUser);
+}
+
+// EXO 12
+
+let books = [
+  {titre: "Livre A", categorie: "Roman"},
+  {titre: "Livre B", categorie: "Poésie"},
+  {titre: "Livre C", categorie: "Roman"}
+]
+
+const detectKind = (title) => {
+  const bookKindTitle = document.createElement("h3");
+  bookKindTitle.textContent = `${title}`;
+  body.append(bookKindTitle);
+
+  const bookKind = document.createElement("ul");
+  body.append(bookKind);
+
+  for (let book of books) {
+    if (book.categorie === title) {
+      let particularBook = document.createElement("li");
+      particularBook.textContent = `${book.titre}`;
+      bookKind.append(particularBook);
+      
+    }
+  }
+}
+
+detectKind("Roman");
+detectKind("Poésie");
