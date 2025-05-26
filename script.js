@@ -121,3 +121,22 @@ creerTable();
 
 // EXO 10
 
+const expensiveProductsTitle = document.createElement("h3");
+expensiveProductsTitle.textContent = "Liste des produits supérieurs à 1€"
+body.append(expensiveProductsTitle);
+
+const expensiveProducts = document.createElement("ul");
+body.append(expensiveProducts);
+
+const detectExpensive = () => {
+  for (let product of products) {
+    if (product.prix > 1) {
+      console.log(product.prix);
+      let expensiveProduct = document.createElement("li");
+      expensiveProduct.textContent = product.nom;
+      expensiveProducts.append(expensiveProduct);
+    }
+  }
+}
+
+detectExpensive();
